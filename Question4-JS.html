@@ -3,20 +3,40 @@
 
 <head>
     <title>Question 4 - JavaScript</title>
-
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <h1>HTML DOM Events</h1>
-    <p>Trigger a function on hover that will output "Hello World":</p>
+    <p>You are provided with a button that displays text when the user hovers the mouse pointer over it. Keyboard-only users must be able to display the text using the keyboard without needing to use a mouse.</p>
+    <p>Trigger a function on hover or when the button gains focus or is activated by the keyboard, to output "Hello World":</p>
 
-    <button onmouseover="myFunction()">Action!</button>
+    <button id="actionButton">Action!</button>
     <p id="demo"></p>
+
+    <script>
+        const button = document.getElementById("actionButton");
+
+        // Function to display "Hello World"
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Hello World";
+        }
+
+        // Add event listeners for hover, focus, and keydown
+        button.addEventListener("mouseover", myFunction);
+        button.addEventListener("focus", myFunction); // Trigger when focused via keyboard
+        button.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                myFunction();
+            }
+        });
+    </script>
 </body>
-<script>
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "Hello World";
-    }
-</script>
 
 </html>
