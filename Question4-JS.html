@@ -9,6 +9,10 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        button:focus {
+            outline: 3px solid #007bff;
+        }
     </style>
 </head>
 
@@ -17,7 +21,7 @@
     <p>Trigger a function on hover or when the button gains focus or is activated by the keyboard, to output "Hello World":</p>
 
     <button id="actionButton">Action!</button>
-    <p id="demo"></p>
+    <p id="demo" aria-live="polite"></p>
 
     <script>
         const button = document.getElementById("actionButton");
@@ -29,11 +33,7 @@
 
         button.addEventListener("mouseover", myFunction);
         button.addEventListener("focus", myFunction); // Trigger when focused via keyboard
-        button.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-                myFunction();
-            }
-        });
+        button.addEventListener("click", myFunction); // Standard keyboard activation with Enter or Space
     </script>
 </body>
 
