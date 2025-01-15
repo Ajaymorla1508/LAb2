@@ -6,25 +6,32 @@
     .mainsection a {
       text-decoration: none;
       color: #414040;
-      outline: none;
     }
 
-    
-    </style>
+    .mainsection a:focus, .mainsection a:hover {
+      outline: 2px solid #0078d4; /* Clear visual indication */
+      background-color: #f0f0f0;
+    }
+
+    .mainsection h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+   </style>
 </head>
 <body>
 <div class="mainsection">
-<h1><img src="lab2/lab2-imageoftext.gif" alt="Shopping categories"></h1>
+  <!-- Replacing the image with text for better accessibility -->
+  <h1>Shopping Categories</h1>
 
-<ul>
-  <li><a href="#">Animals</a></li>
-  <li><a href="#">Computers</a></li>
-  <li><a href="#">Diversity and inclusion</a></li>
-  <li><a href="#">Food</a></li>
-  <li><a href="#">Medicine</a></li>
-  <li><a href="#">Music</a></li>
-</ul>
+  <ul>
+    <li><a href="#">Animals</a></li>
+    <li><a href="#">Computers</a></li>
+    <li><a href="#">Diversity and Inclusion</a></li>
+    <li><a href="#">Food</a></li>
+    <li><a href="#">Medicine</a></li>
+    <li><a href="#">Music</a></li>
+  </ul>
 </div>    
-
 </body>
 </html>
